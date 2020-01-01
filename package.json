@@ -1,0 +1,23 @@
+{
+  "name": "express-rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "dotenv": "^8.2.0",
+    "express": "^5.0.0-alpha.7",
+    "http-assert": "^1.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

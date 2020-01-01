@@ -1,0 +1,23 @@
+@adminUrl=http://localhost:3000/admin/api
+@adminRestUrl={{adminUrl}}/rest
+@json=Content-Type: application/json
+
+
+### 注册
+POST {{adminUrl}}/auth/register
+{{json}}
+
+{
+  "username": "zhangsan",
+  "password": "123456"
+}
+
+
+### 登录
+POST {{adminUrl}}/auth/login
+
+### 获取所有订阅
+GET {{adminRestUrl}}/subscribers
+
+### 获取某个订阅
+GET {{adminRestUrl}}/subscribers/abc
