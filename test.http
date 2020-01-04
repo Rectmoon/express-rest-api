@@ -1,6 +1,7 @@
 @adminUrl=http://localhost:3000/admin/api
 @adminRestUrl={{adminUrl}}/rest
 @json=Content-Type: application/json
+@token=Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMGNkZWZkNzg1MTc2MzRiNDI1YWJiNCIsImlhdCI6MTU3ODE0NTc5MH0.CsVTbEZrF6h6m_K7iCfPLWCUUzu8xNp0a3fBj1XNLdE
 
 
 ### 注册
@@ -15,9 +16,40 @@ POST {{adminUrl}}/auth/register
 
 ### 登录
 POST {{adminUrl}}/auth/login
+{{json}}
+
+{
+  "username": "zhangsan",
+  "password": "123456"
+}
+
+### 创建订阅
+POST {{adminRestUrl}}/subscribers
+{{json}}
+{{token}}
+
+{
+  "name": "xingxing",
+  "subscribedToChannel": "123"
+}
+
+### 删除某个订阅
+DELETE  {{adminRestUrl}}/subscribers/5e109918059c380bfc28189f
+{{token}}
+
+### 更新某个订阅
+PUT {{adminRestUrl}}/subscribers/5e109e1496decd1b7448d4a0
+{{json}}
+{{token}}
+
+{
+  "name": "lisi"
+}
 
 ### 获取所有订阅
 GET {{adminRestUrl}}/subscribers
+{{token}}
 
 ### 获取某个订阅
-GET {{adminRestUrl}}/subscribers/abc
+GET {{adminRestUrl}}/subscribers/5e109918059c380bfc28189f
+{{token}}
